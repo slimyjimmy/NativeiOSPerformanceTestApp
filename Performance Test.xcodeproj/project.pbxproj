@@ -13,6 +13,9 @@
 		F3684C0324BDF60800217EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3684C0224BDF60800217EA9 /* Assets.xcassets */; };
 		F3684C0624BDF60800217EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3684C0524BDF60800217EA9 /* Preview Assets.xcassets */; };
 		F3684C0924BDF60800217EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3684C0724BDF60800217EA9 /* LaunchScreen.storyboard */; };
+		F3684C1124BE013F00217EA9 /* AccelerometerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */; };
+		F3684C1424BE062300217EA9 /* AccelerometerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1324BE062300217EA9 /* AccelerometerTest.swift */; };
+		F3684C1724BE127A00217EA9 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1624BE127A00217EA9 /* TestResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		F3684C0524BDF60800217EA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3684C0824BDF60800217EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3684C0A24BDF60800217EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerTestView.swift; sourceTree = "<group>"; };
+		F3684C1324BE062300217EA9 /* AccelerometerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerTest.swift; sourceTree = "<group>"; };
+		F3684C1624BE127A00217EA9 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,15 @@
 		F3684BFB24BDF60400217EA9 /* Performance Test */ = {
 			isa = PBXGroup;
 			children = (
+				F3684C1224BE060800217EA9 /* Tests */,
 				F3684BFC24BDF60400217EA9 /* AppDelegate.swift */,
 				F3684BFE24BDF60400217EA9 /* SceneDelegate.swift */,
 				F3684C0024BDF60400217EA9 /* ContentView.swift */,
 				F3684C0224BDF60800217EA9 /* Assets.xcassets */,
 				F3684C0724BDF60800217EA9 /* LaunchScreen.storyboard */,
 				F3684C0A24BDF60800217EA9 /* Info.plist */,
+				F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */,
+				F3684C1624BE127A00217EA9 /* TestResult.swift */,
 				F3684C0424BDF60800217EA9 /* Preview Content */,
 			);
 			path = "Performance Test";
@@ -73,6 +82,14 @@
 				F3684C0524BDF60800217EA9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3684C1224BE060800217EA9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F3684C1324BE062300217EA9 /* AccelerometerTest.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3684C1724BE127A00217EA9 /* TestResult.swift in Sources */,
+				F3684C1124BE013F00217EA9 /* AccelerometerTestView.swift in Sources */,
 				F3684BFD24BDF60400217EA9 /* AppDelegate.swift in Sources */,
 				F3684BFF24BDF60400217EA9 /* SceneDelegate.swift in Sources */,
 				F3684C0124BDF60400217EA9 /* ContentView.swift in Sources */,
+				F3684C1424BE062300217EA9 /* AccelerometerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

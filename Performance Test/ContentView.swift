@@ -10,9 +10,35 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-    }
-}
+        NavigationView {
+            VStack {
+                Text("Benchmarks for the performance of native iOS apps").fixedSize(horizontal: false, vertical: true)
+                NavigationLink(destination: AccelerometerTestView()) {
+                    Text("ACCELEROMETER TEST")
+                }.padding()
+                
+                Button(action: {
+                }) {
+                    Text("CONTACTS TEST")
+                }.padding()
+                
+                Button(action: {
+                    
+                }) {
+                    Text("GEOLOCATION TEST")
+                }.padding()
+                
+                Button(action: {
+                    
+                }) {
+                    Text("FILESYSTEM TEST")
+                }.padding()
+                Spacer()
+            }
+                .navigationBarTitle("Performance Test", displayMode: .inline)
+                }
+            }
+        }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
