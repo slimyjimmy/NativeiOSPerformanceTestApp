@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TestResult {
+struct TestResult : Identifiable {
     var id: Int
     var duration: Double
     var message: String

@@ -16,6 +16,7 @@
 		F3684C1124BE013F00217EA9 /* AccelerometerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */; };
 		F3684C1424BE062300217EA9 /* AccelerometerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1324BE062300217EA9 /* AccelerometerTest.swift */; };
 		F3684C1724BE127A00217EA9 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1624BE127A00217EA9 /* TestResult.swift */; };
+		F3686A4524BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3686A4424BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerTestView.swift; sourceTree = "<group>"; };
 		F3684C1324BE062300217EA9 /* AccelerometerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerTest.swift; sourceTree = "<group>"; };
 		F3684C1624BE127A00217EA9 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
+		F3686A4424BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimeIntervalExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */,
 				F3684C1624BE127A00217EA9 /* TestResult.swift */,
 				F3684C0424BDF60800217EA9 /* Preview Content */,
+				F3686A4424BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift */,
 			);
 			path = "Performance Test";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				F3684BFF24BDF60400217EA9 /* SceneDelegate.swift in Sources */,
 				F3684C0124BDF60400217EA9 /* ContentView.swift in Sources */,
 				F3684C1424BE062300217EA9 /* AccelerometerTest.swift in Sources */,
+				F3686A4524BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Performance Test/Preview Content\"";
-				DEVELOPMENT_TEAM = VZ6F22RVB9;
+				DEVELOPMENT_TEAM = MSR7JP2H29;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Performance Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Performance Test/Preview Content\"";
-				DEVELOPMENT_TEAM = VZ6F22RVB9;
+				DEVELOPMENT_TEAM = MSR7JP2H29;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Performance Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
