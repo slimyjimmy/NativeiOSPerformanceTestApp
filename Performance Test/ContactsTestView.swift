@@ -1,5 +1,5 @@
 //
-//  AccelerometerTestView.swift
+//  ContactsTestView.swift
 //  Performance Test
 //
 //  Created by Djimon Nowak on 14.07.20.
@@ -8,23 +8,28 @@
 
 import SwiftUI
 import CoreMotion
+import Contacts
 
-//MARK: AccelerometerTestView
+//MARK: ContactsTestView
 
-struct AccelerometerTestView: View {
+struct ContactsTestView: View {
     
     @State var numberOfIterationsString = ""
     @State var testResults = [TestResult]()
     
     var body: some View {
         VStack {
-            Text("Fetch the current accelerometer values")
+            Text("Fetch the current Contacts values")
             
             Text("Please specify test parameters")
             
             TextField("Number of iterations", text: $numberOfIterationsString).padding()
 
             Button(action: {
+                let contactStore = CNContactStore()
+                if (CNContactStore.authorizationStatus(for: .contacts) != CNAuthorizationStatus.authorized) {
+                    contactStore.requestAccess(for: .contacts, completionHandler: {_,_ in print("hi")})
+                }
                 self.startTest(Int(self.numberOfIterationsString) ?? 0)
             }) {
                 Text("START BENCHMARK")
@@ -45,31 +50,34 @@ struct AccelerometerTestView: View {
         }
         if (numberOfIterationsLeft == 0) {
             var durationSum = 0.0
-            for i in 0...self.testResults.count - 1 {
+            for i in 0..<self.testResults.count {
                 durationSum += self.testResults[i].duration
             }
             var durationAvg = durationSum / Double(self.testResults.count)
             testResults.append(TestResult(id: numberOfIterationsTotal + 1, duration: durationAvg, message: "ALL TESTS FINISHED SUCCESSFULLY AVERAGING"))
             return
         }
-        let motionManager = CMMotionManager()
-        motionManager.accelerometerUpdateInterval = 0.1
+        
+        //Test zeit messen etc.
+        let contact = CNMutableContact()
+        contact.givenName = "SwiftIsWeird" + String(Int.random(in: 0 ... 1000))
+        contact.phoneNumbers = [CNLabeledValue(
+        label: CNLabelPhoneNumberiPhone,
+        value: CNPhoneNumber(stringValue: "(408) 555-0126"))]
+        let store = CNContactStore()
+        let saveRequest = CNSaveRequest()
+        saveRequest.add(contact, toContainerWithIdentifier: nil)
         let startTime = DispatchTime.now()
-        if (!motionManager.isAccelerometerAvailable) {
-            print("geht hier nicht bro")
+        do {
+            try store.execute(saveRequest)
         }
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
-                if let myData = data{
-                    let stopTime = DispatchTime.now()
-                    motionManager.stopAccelerometerUpdates()
-                    let x = String(myData.acceleration.x * 9.81)
-                    let y = String(myData.acceleration.y * 9.81)
-                    let z = String(myData.acceleration.z * 9.81)
-                    var testResult = TestResult(id: numberOfIterationsTotal + 1 - numberOfIterationsLeft, duration: startTime.distance(to: stopTime).toDouble(), message: "Test finished (X: " + x + ", Y: " + y + ", Z: " + z + ")")
-                    self.testResults.append(testResult)
-                    self.startTest(numberOfIterationsLeft - 1)
-                }
+        catch {
+            print("huch")
         }
+        let stopTime = DispatchTime.now()
+        var testResult = TestResult(id: numberOfIterationsTotal + 1 - numberOfIterationsLeft, duration: startTime.distance(to: stopTime).toDouble(), message: "Test finished sucessfully (" + contact.givenName + ")")
+        self.testResults.append(testResult)
+        self.startTest(numberOfIterationsLeft - 1)
     }
 }
 
@@ -80,8 +88,8 @@ struct AccelerometerTestView: View {
 
 //MARK: Preview
 
-struct AccelerometerTestView_Previews: PreviewProvider {
+struct ContactsTestView_Previews: PreviewProvider {
     static var previews: some View {
-        AccelerometerTestView()
+        ContactsTestView()
     }
 }

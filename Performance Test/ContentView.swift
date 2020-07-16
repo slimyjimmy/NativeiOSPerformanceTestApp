@@ -17,8 +17,7 @@ struct ContentView: View {
                     Text("ACCELEROMETER TEST")
                 }.padding()
                 
-                Button(action: {
-                }) {
+                NavigationLink(destination: ContactsTestView()) {
                     Text("CONTACTS TEST")
                 }.padding()
                 
