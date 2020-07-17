@@ -1,5 +1,5 @@
 //
-//  ContactsTestView.swift
+//  FilesystemTestView.swift
 //  Performance Test
 //
 //  Created by Djimon Nowak on 14.07.20.
@@ -10,9 +10,9 @@ import SwiftUI
 import CoreMotion
 import Contacts
 
-//MARK: ContactsTestView
+//MARK: FilesystemTestView
 
-struct ContactsTestView: View {
+struct FilesystemTestView: View {
     
     @State var numberOfIterationsString = ""
     @State var testResults = [TestResult]()
@@ -20,7 +20,7 @@ struct ContactsTestView: View {
     var body: some View {
         NavigationView {
         VStack {
-            Text("Fetch the current Contacts values")
+            Text("Fetch image from device filesystem")
             
             Text("Please specify test parameters")
             
@@ -90,7 +90,7 @@ struct ContactsTestView: View {
 
 //MARK: Preview
 
-struct ContactsTestView_Previews: PreviewProvider {
+struct FilesystemTestView_Previews: PreviewProvider {
     static var previews: some View {
         ContactsTestView()
     }

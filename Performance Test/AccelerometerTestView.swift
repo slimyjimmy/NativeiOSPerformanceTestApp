@@ -17,6 +17,7 @@ struct AccelerometerTestView: View {
     @State var testResults = [TestResult]()
     
     var body: some View {
+        NavigationView {
         VStack {
             Text("Fetch the current accelerometer values")
             
@@ -33,7 +34,8 @@ struct AccelerometerTestView: View {
                 Text(testResult.duration.description + "ns")
                 Text(testResult.message)
             }
-        }
+        }.navigationBarTitle("Accelerometer", displayMode: .inline)
+    }
     }
     
     //MARK: Test

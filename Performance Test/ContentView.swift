@@ -21,15 +21,11 @@ struct ContentView: View {
                     Text("CONTACTS TEST")
                 }.padding()
                 
-                Button(action: {
-                    
-                }) {
+                NavigationLink(destination: GeolocationTestView()) {
                     Text("GEOLOCATION TEST")
                 }.padding()
                 
-                Button(action: {
-                    
-                }) {
+                NavigationLink(destination: GeolocationTestView()) {
                     Text("FILESYSTEM TEST")
                 }.padding()
                 Spacer()

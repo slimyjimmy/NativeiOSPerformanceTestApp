@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F35E50DB24C0EB7E00CA9345 /* ContactsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35E50DA24C0EB7E00CA9345 /* ContactsTestView.swift */; };
+		F35E50DD24C0F29F00CA9345 /* GeolocationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35E50DC24C0F29F00CA9345 /* GeolocationTestView.swift */; };
 		F3684BFD24BDF60400217EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684BFC24BDF60400217EA9 /* AppDelegate.swift */; };
 		F3684BFF24BDF60400217EA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684BFE24BDF60400217EA9 /* SceneDelegate.swift */; };
 		F3684C0124BDF60400217EA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C0024BDF60400217EA9 /* ContentView.swift */; };
@@ -17,10 +18,13 @@
 		F3684C1124BE013F00217EA9 /* AccelerometerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */; };
 		F3684C1724BE127A00217EA9 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3684C1624BE127A00217EA9 /* TestResult.swift */; };
 		F3686A4524BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3686A4424BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift */; };
+		F370800024C1BF6E00FB8D41 /* FilesystemTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3707FFF24C1BF6E00FB8D41 /* FilesystemTestView.swift */; };
+		F370800224C1CB4700FB8D41 /* Base64Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370800124C1CB4700FB8D41 /* Base64Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F35E50DA24C0EB7E00CA9345 /* ContactsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTestView.swift; sourceTree = "<group>"; };
+		F35E50DC24C0F29F00CA9345 /* GeolocationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationTestView.swift; sourceTree = "<group>"; };
 		F3684BF924BDF60400217EA9 /* Performance Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Performance Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3684BFC24BDF60400217EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3684BFE24BDF60400217EA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerTestView.swift; sourceTree = "<group>"; };
 		F3684C1624BE127A00217EA9 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		F3686A4424BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimeIntervalExtension.swift; sourceTree = "<group>"; };
+		F3707FFF24C1BF6E00FB8D41 /* FilesystemTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemTestView.swift; sourceTree = "<group>"; };
+		F370800124C1CB4700FB8D41 /* Base64Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +79,11 @@
 				F3684C1024BE013F00217EA9 /* AccelerometerTestView.swift */,
 				F3684C1624BE127A00217EA9 /* TestResult.swift */,
 				F35E50DA24C0EB7E00CA9345 /* ContactsTestView.swift */,
+				F35E50DC24C0F29F00CA9345 /* GeolocationTestView.swift */,
+				F3707FFF24C1BF6E00FB8D41 /* FilesystemTestView.swift */,
 				F3684C0424BDF60800217EA9 /* Preview Content */,
 				F3686A4424BEFBEB0022BB3C /* DispatchTimeIntervalExtension.swift */,
+				F370800124C1CB4700FB8D41 /* Base64Helper.swift */,
 			);
 			path = "Performance Test";
 			sourceTree = "<group>";
@@ -161,6 +170,9 @@
 				F3684C1724BE127A00217EA9 /* TestResult.swift in Sources */,
 				F3684C1124BE013F00217EA9 /* AccelerometerTestView.swift in Sources */,
 				F3684BFD24BDF60400217EA9 /* AppDelegate.swift in Sources */,
+				F35E50DD24C0F29F00CA9345 /* GeolocationTestView.swift in Sources */,
+				F370800224C1CB4700FB8D41 /* Base64Helper.swift in Sources */,
+				F370800024C1BF6E00FB8D41 /* FilesystemTestView.swift in Sources */,
 				F3684BFF24BDF60400217EA9 /* SceneDelegate.swift in Sources */,
 				F35E50DB24C0EB7E00CA9345 /* ContactsTestView.swift in Sources */,
 				F3684C0124BDF60400217EA9 /* ContentView.swift in Sources */,

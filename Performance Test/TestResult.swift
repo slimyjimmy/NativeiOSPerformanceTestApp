@@ -19,3 +19,11 @@ struct TestResult : Identifiable {
         self.message = message
     }
 }
+
+class TestResults : ObservableObject {
+    @Published var testResults: [TestResult]
+    
+    init(){
+        testResults = [TestResult]()
+    }
+}
