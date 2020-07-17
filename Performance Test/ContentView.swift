@@ -25,7 +25,7 @@ struct ContentView: View {
                     Text("GEOLOCATION TEST")
                 }.padding()
                 
-                NavigationLink(destination: GeolocationTestView()) {
+                NavigationLink(destination: FilesystemTestView()) {
                     Text("FILESYSTEM TEST")
                 }.padding()
                 Spacer()

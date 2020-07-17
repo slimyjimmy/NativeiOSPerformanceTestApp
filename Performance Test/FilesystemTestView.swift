@@ -16,6 +16,7 @@ struct FilesystemTestView: View {
     
     @State var numberOfIterationsString = ""
     @State var testResults = [TestResult]()
+    var fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("testImage.png")
     
     var body: some View {
         NavigationView {
@@ -27,10 +28,6 @@ struct FilesystemTestView: View {
             TextField("Number of iterations", text: $numberOfIterationsString).padding()
 
             Button(action: {
-                let contactStore = CNContactStore()
-                if (CNContactStore.authorizationStatus(for: .contacts) != CNAuthorizationStatus.authorized) {
-                    contactStore.requestAccess(for: .contacts, completionHandler: {_,_ in print("hi")})
-                }
                 self.startTest(Int(self.numberOfIterationsString) ?? 0)
             }) {
                 Text("START BENCHMARK")
@@ -39,17 +36,33 @@ struct FilesystemTestView: View {
                 Text(testResult.duration.description + "ns")
                 Text(testResult.message)
             }
-        }.navigationBarTitle("Contacts", displayMode: .inline)
+        }.navigationBarTitle("Filesystem", displayMode: .inline)
     }
     }
     
     //MARK: Test
+    
+    func writeFileToDevice() -> (){
+        let fileManager = FileManager()
+        if (fileManager.fileExists(atPath: fileURL.path)) {
+            return
+        }
+        let convertedData = Data(base64Encoded: Base64Helper.encodedImage)
+        do {
+            try convertedData?.write(to: fileURL)
+        }
+        catch {
+            print("pech gehant")
+        }
+        return
+    }
     
     func startTest(_ numberOfIterationsLeft: Int) -> () {
         let numberOfIterationsTotal = Int(numberOfIterationsString) ?? 0
         if (numberOfIterationsLeft == numberOfIterationsTotal) {
             testResults.removeAll()
         }
+        writeFileToDevice()
         if (numberOfIterationsLeft == 0) {
             var durationSum = 0.0
             for i in 0..<self.testResults.count {
@@ -60,24 +73,14 @@ struct FilesystemTestView: View {
             return
         }
         
-        //Test zeit messen etc.
-        let contact = CNMutableContact()
-        contact.givenName = "SwiftIsWeird" + String(Int.random(in: 0 ... 1000))
-        contact.phoneNumbers = [CNLabeledValue(
-        label: CNLabelPhoneNumberiPhone,
-        value: CNPhoneNumber(stringValue: "(408) 555-0126"))]
-        let store = CNContactStore()
-        let saveRequest = CNSaveRequest()
-        saveRequest.add(contact, toContainerWithIdentifier: nil)
-        let startTime = DispatchTime.now()
-        do {
-            try store.execute(saveRequest)
-        }
-        catch {
-            print("huch")
-        }
-        let stopTime = DispatchTime.now()
-        var testResult = TestResult(id: numberOfIterationsTotal + 1 - numberOfIterationsLeft, duration: startTime.distance(to: stopTime).toDouble(), message: "Test finished sucessfully (" + contact.givenName + ")")
+        let startTime: DispatchTime
+        let stopTime: DispatchTime
+        let fileManager = FileManager()
+        startTime = DispatchTime.now()
+        let data = fileManager.contents(atPath: fileURL.path)
+        stopTime = DispatchTime.now()
+        
+        var testResult = TestResult(id: numberOfIterationsTotal + 1 - numberOfIterationsLeft, duration: startTime.distance(to: stopTime).toDouble(), message: "Test finished sucessfully")
         self.testResults.append(testResult)
         self.startTest(numberOfIterationsLeft - 1)
     }
